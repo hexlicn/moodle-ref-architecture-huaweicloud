@@ -19,11 +19,11 @@ AOS template basically provides 2 YAML scripts for deploying Moodle on Huawei Cl
 
 ### Huawei Cloud AOS
 
-Navigate to folder [aos-templates](https://github.com/aws-samples/aws-refarch-moodle/tree/master/templates) , download YAML scripts to your clients and launch from [here](https://console-intl.huaweicloud.com/aos/?region=af-south-1&locale=en-us#/app/dashboard) to proceed with creating template, then create stack based on that. 
+Navigate to folder [aos-templates](https://github.com/hexlicn/moodle-ref-architecture-huaweicloud/tree/main/aos-templates) , download YAML scripts to your clients and launch from [here](https://console-intl.huaweicloud.com/aos/?region=af-south-1&locale=en-us#/app/dashboard) to proceed with creating template, then create stack based on that. 
 
 ### Packer / Terraform
 
-Navigate to folder [tf-packer-scripts](https://github.com/aws-samples/aws-refarch-moodle/tree/master/templates), download them into your clients with packer / terraform plugin installed (see [Packer install doc](https://www.packer.io/docs/install) and [Terraform install doc](https://learn.hashicorp.com/tutorials/terraform/install-cli) for details), plan and apply from there. 
+Navigate to folder [tf-packer-scripts](https://github.com/hexlicn/moodle-ref-architecture-huaweicloud/tree/main/tf-packer-scripts), download them into your clients with packer / terraform plugin installed (see [Packer install doc](https://www.packer.io/docs/install) and [Terraform install doc](https://learn.hashicorp.com/tutorials/terraform/install-cli) for details), plan and apply from there. 
 
 ### Action Plan notes
 
@@ -38,13 +38,13 @@ Navigate to folder [tf-packer-scripts](https://github.com/aws-samples/aws-refarc
 
 The following architecture blueprint is based on VM deployment and cloud database/cache, just for your reference to deploy a basic Moodle web site on Huawei Cloud. You may want to change to suite for your requirements.
 
-
+![image](https://raw.githubusercontent.com/hexlicn/moodle-ref-architecture-huaweicloud/main/images/huaweicloud-refarch-moodle-architecture-vm.png)
 
 The following architecture blueprint is based on container deployment and cloud database/cache,  just for your reference to deploy a basic Moodle web site on Huawei Cloud. You may want to change to suite for your requirements.
 
-
+![image](https://raw.githubusercontent.com/hexlicn/moodle-ref-architecture-huaweicloud/main/images/huaweicloud-refarch-moodle-architecture-container.png)
 
 ## Contacts
 
-Author: Harrison Li, Email me @[lihexin1@huawei.com](lihexin1@huawei.com)
+Author: Harrison Li, Email @[me](lihexin1@huawei.com)
 
