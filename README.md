@@ -46,5 +46,5 @@ The following architecture blueprint is based on container deployment and cloud 
 
 ## Contacts
 
-Author: Harrison Li, Email @[me](lihexin1@huawei.com)
+Author: Harrison Li, Email me @ lihexin1@huawei.com
 
