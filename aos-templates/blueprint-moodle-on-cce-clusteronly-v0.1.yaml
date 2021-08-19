@@ -1,0 +1,279 @@
+tosca_definitions_version: huaweicloud_tosca_version_1_0
+description: template for provision an CCE Cluster with 1 node
+inputs:
+  clusterAvailabilityZone:
+    default: af-south-1b
+    description: 'AZ where the cluster is located'
+    label: 'Cluster'
+  clusterFlavor:
+    default: cce.s1.small
+    description: 'Cluster specification'
+    label: 'Cluster'
+  clusterName:
+    description: 'Cluster name, which must be unique'
+    label: 'Cluster'
+  clusterversion:
+    default: v1.17
+    description: 'Cluster version to be installed'
+    label: 'Cluster'
+  nodeAvailabilityZone:
+    default: af-south-1b
+    description: 'AZ where the node is located'
+    label: 'Node'
+  dataVolumeSize:
+    default: 100
+    description: 'Size of the data disk of a cluster node'
+    label: 'Node'
+  dataVolumeType:
+    default: SAS
+    description: 'ECS data disk type, which must match the disk type provided by the system'
+    label: 'Node'
+  nodeFlavor:
+    default: s6.large.4
+    description: 'Node specification'
+    label: 'Node'
+  number:
+    default: 1
+    description: 'Number of nodes created'
+    label: 'Node'
+  nodeName:
+    default: mooodle-cce-node
+    description: 'Node name'
+    label: 'Node'
+  shareType:
+    default: PER
+    description: 'Share type of an elastic IP address'
+    label: 'Node'
+  bandwidthSize:
+    default: 1
+    description: 'Bandwidth of an elastic IP address'
+    label: 'Node'
+  ipType:
+    default: 5_bgp
+    description: 'Type of an elastic IP address'
+    label: 'Node'
+  rootVolumeSize:
+    default: 40
+    description: 'Size of a system disk'
+    label: 'Node'
+  rootVolumeType:
+    default: SATA
+    description: 'Type of a system disk'
+    label: 'Node'
+  sshKey:
+    default: ''
+    description: 'Key pair for node login'
+    label: 'Node'
+  subnet-cidr:
+    default: '192.168.0.0/24'
+    description: 'Subnet CIDR'
+    label: 'Subnet'
+  dhcenable:
+    default: true
+    description: 'whether the subnet turns on DHCP functionality'
+    label: 'Subnet'
+  subnet-gateway:
+    default: 192.168.0.1
+    description: 'Subnet gateway'
+    label: 'Subnet'
+  my-subnet_name:
+    description: Sbunet Name
+    label: 'Subnet'
+  vpc-cidr:
+    default: '192.168.0.0/16'
+    description: 'Available subnet ranges under VPC'
+    label: 'VPC'
+  vpc-cce-moodle-app_name:
+    description: VPC Name
+    label: 'VPC'
+metadata:
+  Designer:
+    6b1a5137-137f-4157-88b7-12e7798aaf34:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 410
+        y: 90
+      z: 2
+      parent: 7da20ca0-09ed-4088-bbc9-aec656da6b94
+      embeds: []
+    7da20ca0-09ed-4088-bbc9-aec656da6b94:
+      size:
+        width: 420
+        height: 240
+      position:
+        x: 80
+        y: 30
+      z: 1
+      embeds:
+        - 6b1a5137-137f-4157-88b7-12e7798aaf34
+        - ce8b1f12-0a8a-4e08-bdcb-416ddba0e898
+    901881bf-9386-46a2-a328-af8be3874287:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 140
+        y: 150
+      z: 3
+      parent: ce8b1f12-0a8a-4e08-bdcb-416ddba0e898
+      embeds: []
+    ce8b1f12-0a8a-4e08-bdcb-416ddba0e898:
+      size:
+        width: 120
+        height: 150
+      position:
+        x: 110
+        y: 90
+      z: 2
+      parent: 7da20ca0-09ed-4088-bbc9-aec656da6b94
+      embeds:
+        - 901881bf-9386-46a2-a328-af8be3874287
+      isassociatedwith:
+        - 6b1a5137-137f-4157-88b7-12e7798aaf34
+    683f8fe9-bfcb-4b1c-9b61-dc0bcb43183f:
+      source:
+        id: ce8b1f12-0a8a-4e08-bdcb-416ddba0e898
+      target:
+        id: 6b1a5137-137f-4157-88b7-12e7798aaf34
+      z: 2
+  relationships:
+    6b1a5137-137f-4157-88b7-12e7798aaf34:
+      references:
+        vpcId:
+          get_reference: vpc-cce-moodle-app
+    901881bf-9386-46a2-a328-af8be3874287:
+      references:
+        clusterId:
+          get_reference: cce-moodle-app-cluster
+    ce8b1f12-0a8a-4e08-bdcb-416ddba0e898:
+      references:
+        subnetId:
+          get_reference: subnet-cce-moodle-app
+        vpcId:
+          get_reference: vpc-cce-moodle-app
+node_templates:
+  cce-moodle-app-cluster:
+    metadata:
+      Designer:
+        id: ce8b1f12-0a8a-4e08-bdcb-416ddba0e898
+    properties:
+      availabilityZone:
+        get_input: clusterAvailabilityZone
+      flavor:
+        get_input: clusterFlavor
+      name:
+        get_input: clusterName
+      subnetId:
+        get_reference: subnet-cce-moodle-app
+      version:
+        get_input: clusterversion
+      vpcId:
+        get_reference: vpc-cce-moodle-app
+    requirements:
+      - subnetId:
+          node: subnet-cce-moodle-app
+      - vpcId:
+          node: vpc-cce-moodle-app
+    type: HuaweiCloud.CCE.Cluster
+  cce-moodle-app-node:
+    metadata:
+      Designer:
+        id: 901881bf-9386-46a2-a328-af8be3874287
+    properties:
+      availabilityZone:
+        get_input: nodeAvailabilityZone
+      clusterId:
+        get_reference: cce-moodle-app-cluster
+      dataVolumes:
+        - size:
+            get_input: dataVolumeSize
+          volumeType:
+            get_input: dataVolumeType
+      flavor:
+        get_input: nodeFlavor
+      instances:
+        get_input: number
+      name:
+        get_input: nodeName
+      os: 'CentOS 7.4'
+      publicIp:
+        eip:
+          bandwidth:
+            shareType:
+              get_input: shareType
+            size:
+              get_input: bandwidthSize
+          ipType:
+            get_input: ipType
+      rootVolume:
+        size:
+          get_input: rootVolumeSize
+        volumeType:
+          get_input: rootVolumeType
+      sshKeyName:
+        get_input: sshKey
+    requirements:
+      - clusterId:
+          node: cce-moodle-app-cluster
+    type: HuaweiCloud.CCE.NodePool
+  subnet-cce-moodle-app:
+    metadata:
+      Designer:
+        id: 6b1a5137-137f-4157-88b7-12e7798aaf34
+    properties:
+      availabilityZone:
+        get_input: clusterAvailabilityZone
+      cidr:
+        get_input: subnet-cidr
+      dhcpEnable:
+        get_input: dhcenable
+      dnsList:
+        - 100.125.1.250
+        - 8.8.8.8
+      gateway:
+        get_input: subnet-gateway
+      name:
+        get_input: my-subnet_name
+      vpcId:
+        get_reference: vpc-cce-moodle-app
+    requirements:
+      - vpcId:
+          node: vpc-cce-moodle-app
+    type: HuaweiCloud.VPC.Subnet
+  vpc-cce-moodle-app:
+    metadata:
+      Designer:
+        id: 7da20ca0-09ed-4088-bbc9-aec656da6b94
+    properties:
+      cidr:
+        get_input: vpc-cidr
+      name:
+        get_input: vpc-cce-moodle-app_name
+    type: HuaweiCloud.VPC.VPC
+outputs:
+  cluster_id:
+    description: ID of created cluster
+    value:
+      get_attribute:
+        - cce-moodle-app-cluster
+        - clusterId
+  public_ip:
+    description: EIP of created node
+    value:
+      get_attribute:
+        - cce-moodle-app-node
+        - publicIp
+  subnet_name:
+    description: Name of subnet
+    value:
+      get_attribute:
+        - subnet-cce-moodle-app
+        - refName
+  vpc_name:
+    description: Name of VPC
+    value:
+      get_attribute:
+        - vpc-cce-moodle-app
+        - refName
