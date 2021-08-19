@@ -777,154 +777,154 @@ node_templates:
         id: 77568823-83cc-49c8-8b96-50877dbd88b0
 inputs:
   vpc-moodle_cidr:
-    description: 虚拟私有云下可用子网范围
+    description: Range of subnets available within VPC
     label: vpc
     default: '172.16.0.0/16'
   vpc-moodle_name:
-    description: 虚拟私有云名称
+    description: VPC name
     default: vpc-moodle
     label: vpc
   subnet-app_name:
-    description: 子网名称
+    description: Subnet name
     default: subnet-moodle-app
     label: vpc
   subnet-app_cidr:
-    description: 子网内可使用的地址范围
+    description: The range of IP address available within the application subnet
     label: vpc
     default: '172.16.0.0/24'
   subnet-app_gateway:
-    description: 子网的网关
+    description: Gateway of application Subnet
     label: vpc
     default: 172.16.0.1
   subnet-db_name:
-    description: 子网名称
+    description: Subnet name
     default: subnet-moodle-db
     label: vpc
   subnet-db_cidr:
-    description: 子网内可使用的地址范围
+    description: The range of IP address available within the database subnet
     label: vpc
     default: '172.16.1.0/24'
   subnet-db_gateway:
-    description: 子网的网关
+    description: Gateway of database Subnet
     label: vpc
     default: 172.16.1.1
   sg-db_name:
-    description: SecurityGroup实例的名称
+    description: SecurityGroup for database instance name
     default: sg-moodle-db
     label: vpc
   sg-app_name:
-    description: SecurityGroup实例的名称
+    description: SecurityGroup for application instance name
     default: sg-moodle-app
     label: vpc
   ecs-app01_imageId:
-    description: 云服务器使用的镜像ID
+    description: Private image ID
     label: ecs
   ecs-app01_flavor:
-    description: 云服务器的规格，请确认该区域支持的规格
+    description: Cloud vm flavor, please make sure to adopt the supported flavor in the specific region
     label: ecs
   # ecs-app01_rootVolume_volumeType:
-  #   description: 系统盘类型
+  #   description: OS disk type
   #   label: ecs
   # ecs-app01_availabilityZone:
-  #   description: 云服务器对应可用区信息，请确认该区域支持的可用区
+  #   description: Provision cloud vm in the specific AZ
   #   label: ecs
   ecs-app01_name:
-    description: 云服务器名称
+    description: Computing instance name for the first Moodle app server
     label: ecs
   sshKeyName:
     description: SSH Key Pair Name (Please create ssh key in advance)
     label: ecs
   ecs-app02_imageId:
-    description: 云服务器使用的镜像ID
+    description: Private image ID
     label: ecs
   ecs-app02_flavor:
-    description: 云服务器的规格，请确认该区域支持的规格
+    description: Cloud vm flavor, please make sure to adopt the supported flavor in the specific region
     label: ecs
   # ecs-app02_rootVolume_volumeType:
-  #   description: 系统盘类型
+  #   description: OS disk type
   #   label: ecs
   # ecs-app02_availabilityZone:
-  #   description: 云服务器对应可用区信息，请确认该区域支持的可用区
+  #   description: Provision cloud vm in the specific AZ
   #   label: ecs
   ecs-app02_name:
-    description: 云服务器名称
+    description: Computing instance name for the second Moodle app server
     label: ecs
   moodle-mysql_dbPort:
-    description: 访问实例的端口
+    description: MySQL port expose to applications
     label: mysql
     default: 3306
   # moodle-mysql_availabilityZone:
-  #   description: 实例所属的可用区
+  #   description: Provision database instance in the specific AZ
   #   label: mysql
   moodle-mysql_dbRootPassword:
-    description: '实例的root用户密码。参数非空，由大小写字母、数字和特殊符号~!@#%^*-_=+?组成，长度8~32位，非弱密码。'
+    description: 'The root user password for the instance, which consist of upper and lower case letters, numbers and special symbols ~! @#%^*-_=+? composed of 8~32 digits in length.'
     label: mysql
   moodle-mysql_flavor:
-    description: 实例规格
+    description: MySQL flavor
     label: mysql
   moodle-mysql_HA_enable:
-    description: 是否高可用
+    description: Specify deployment mode (Single Instance, HA or Read Replica)
     label: mysql
   moodle-redis_password:
-    description: 分布式缓存实例的登录密码
+    description: Password to login to Redis (auth)
     label: redis
   moodle-redis_instanceMode:
-    description: 分布式缓存实例的类型
+    description: Specify deployment mode (Single Instance, HA or Cluster)
     label: redis
     default: single
   moodle-redis_name:
-    description: 分布式缓存实例的名称
+    description: Redis instance name
     default: moodle-cachestore
     label: redis
   # moodle-redis_availablityZone1:
-  #   description: 分布式缓存实例所属的可用区1
+  #   description: Redis primary instance AZ
   #   label: redis
   # moodle-redis_availablityZone2:
-  #   description: 分布式缓存实例所属的可用区2，创建主备类型的分布式缓存实例需要输入此分区
+  #   description: Redis standby instance AZ, please specify it when deploy as HA mode
   #   label: redis
   sg-rule-http_maxPort:
-    description: 指定结束端口号
+    description: end range of the network TCP/UDP port for web server
     default: 80
     label: vpc
   sg-rule-http_minPort:
-    description: 指定起始端口号
+    description: start range of the network TCP/UDP port for web server
     default: 80
     label: vpc
   sg-rule-ssh_maxPort:
-    description: 指定结束端口号
+    description: end range of the network TCP/UDP port for remote ssh
     default: 22
     label: vpc
   sg-rule-ssh_minPort:
-    description: 指定起始端口号
+    description: start range of the network TCP/UDP port for remote ssh
     default: 22
     label: vpc
   sg-rule-mysql_maxPort:
-    description: 指定结束端口号
+    description: end range of the network TCP/UDP port for MySQL
     default: 3306
     label: vpc
   sg-rule-mysql_minPort:
-    description: 指定起始端口号
+    description: start range of the network TCP/UDP port for MySQL
     default: 3306
     label: vpc
   # sg-rule-mysql_remoteSecurityGroupId:
-  #   description: 对端安全组ID
+  #   description: Application Subnet ID
   #   label: vpc
   sg-rule-redis_maxPort:
-    description: 指定结束端口号
+    description: end range of the network TCP/UDP port for Redis
     default: 6379
     label: vpc
   sg-rule-redis_minPort:
-    description: 指定起始端口号
+    description: start range of the network TCP/UDP port for Redis
     default: 6379
     label: vpc
   # sg-rule-redis_remoteSecurityGroupId:
-  #   description: 对端安全组ID
+  #   description: Application Subnet ID
   #   label: vpc
   elb-list-moodle_port:
-    description: 监听端口
+    description: ELB listener port
     default: 80
     label: 'vpc'
   svr-mem-moodle_port:
-    description: 弹性云服务器后端端口
+    description: Computing instance expose port
     default: 80
     label: vpc
