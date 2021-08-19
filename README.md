@@ -1,4 +1,4 @@
-# Hosting Moodle on HUAWEICLOUD
+# Hosting Moodle on HUAWEI CLOUD
 
 Reference Architecture for Deploying Moodle on Huawei Cloud 
 
