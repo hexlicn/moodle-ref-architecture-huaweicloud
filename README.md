@@ -4,10 +4,10 @@ Reference Architecture for Deploying Moodle on Huawei Cloud
 
 ## Table of Contents
 
-- Introduction
-- How to Provision
-- Architecture
-- Contacts
+- [Introduction](https://github.com/hexlicn/moodle-ref-architecture-huaweicloud#introduction)
+- [How to Provision](https://github.com/hexlicn/moodle-ref-architecture-huaweicloud#how-to-provision)
+- [Architecture](https://github.com/hexlicn/moodle-ref-architecture-huaweicloud#architecture)
+- [Contacts](https://github.com/hexlicn/moodle-ref-architecture-huaweicloud#contacts)
 
 ## Introduction
 
