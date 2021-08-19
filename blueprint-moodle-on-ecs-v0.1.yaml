@@ -1,0 +1,930 @@
+tosca_definitions_version: huaweicloud_tosca_version_1_0
+metadata:
+  Designer:
+    41d23a04-2c27-4285-9f85-66bc77bc7d62:
+      size:
+        width: 570
+        height: 420
+      position:
+        x: 340
+        y: 70
+      z: 1
+      embeds:
+        - 96d3e8a5-a149-480a-8143-41a9017c3241
+        - 1082ee04-1456-405d-9290-d38c89f9f6f6
+        - 47cbfee1-4c95-42de-94f6-e3765eda0b1a
+        - 83b2dfbc-0cb3-4593-8d63-e9d0291b0b7c
+        - 4d868f20-45fb-4727-878e-de044e2ecf5c
+        - 52689ccf-1876-43f5-95c3-dce9d994a263
+        - 745a054e-7bd1-4756-8f15-77be473c0b7d
+        - f07b7998-9099-44fe-a022-11295c0688de
+    52689ccf-1876-43f5-95c3-dce9d994a263:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 390
+        y: 130
+      z: 2
+      parent: 41d23a04-2c27-4285-9f85-66bc77bc7d62
+    96d3e8a5-a149-480a-8143-41a9017c3241:
+      size:
+        width: 210
+        height: 120
+      position:
+        x: 660
+        y: 130
+      z: 2
+      parent: 41d23a04-2c27-4285-9f85-66bc77bc7d62
+      embeds:
+        - 9481b981-243c-40de-be45-f12aeefac2ab
+        - c7fca58f-15a2-44b9-a7db-225b27ea288f
+    1082ee04-1456-405d-9290-d38c89f9f6f6:
+      size:
+        width: 210
+        height: 120
+      position:
+        x: 660
+        y: 310
+      z: 2
+      parent: 41d23a04-2c27-4285-9f85-66bc77bc7d62
+      embeds:
+        - 254b0218-cd60-4695-a6eb-c1d5ca1153c0
+        - 9f8af9dc-9591-441a-9cf4-0f651644f160
+    47cbfee1-4c95-42de-94f6-e3765eda0b1a:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 390
+        y: 330
+      z: 2
+      parent: 41d23a04-2c27-4285-9f85-66bc77bc7d62
+      embeds: ''
+    f07b7998-9099-44fe-a022-11295c0688de:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 530
+        y: 90
+      z: 2
+      parent: 41d23a04-2c27-4285-9f85-66bc77bc7d62
+      isassociatedwith:
+        - 96d3e8a5-a149-480a-8143-41a9017c3241
+        - 52689ccf-1876-43f5-95c3-dce9d994a263
+        - c8c743ba-6fe2-4c6e-a0b7-f3a17df46448
+    745a054e-7bd1-4756-8f15-77be473c0b7d:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 530
+        y: 190
+      z: 2
+      parent: 41d23a04-2c27-4285-9f85-66bc77bc7d62
+      embeds: ''
+      isassociatedwith:
+        - 96d3e8a5-a149-480a-8143-41a9017c3241
+        - 52689ccf-1876-43f5-95c3-dce9d994a263
+        - c8c743ba-6fe2-4c6e-a0b7-f3a17df46448
+    4d868f20-45fb-4727-878e-de044e2ecf5c:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 530
+        y: 280
+      z: 2
+      parent: 41d23a04-2c27-4285-9f85-66bc77bc7d62
+      isassociatedwith:
+        - 1082ee04-1456-405d-9290-d38c89f9f6f6
+        - 47cbfee1-4c95-42de-94f6-e3765eda0b1a
+    83b2dfbc-0cb3-4593-8d63-e9d0291b0b7c:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 530
+        y: 390
+      z: 2
+      parent: 41d23a04-2c27-4285-9f85-66bc77bc7d62
+      isassociatedwith:
+        - 1082ee04-1456-405d-9290-d38c89f9f6f6
+        - 47cbfee1-4c95-42de-94f6-e3765eda0b1a
+    9481b981-243c-40de-be45-f12aeefac2ab:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 690
+        y: 160
+      z: 3
+      parent: 96d3e8a5-a149-480a-8143-41a9017c3241
+    c7fca58f-15a2-44b9-a7db-225b27ea288f:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 780
+        y: 160
+      z: 3
+      parent: 96d3e8a5-a149-480a-8143-41a9017c3241
+      embeds: ''
+    254b0218-cd60-4695-a6eb-c1d5ca1153c0:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 780
+        y: 340
+      z: 3
+      parent: 1082ee04-1456-405d-9290-d38c89f9f6f6
+      embeds: ''
+    9f8af9dc-9591-441a-9cf4-0f651644f160:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 690
+        y: 340
+      z: 3
+      parent: 1082ee04-1456-405d-9290-d38c89f9f6f6
+      embeds: ''
+    afb94d31-0dbb-4fea-ac2c-6fc7f5c98613:
+      size:
+        width: 330
+        height: 270
+      position:
+        x: -30
+        y: 150
+      z: 1
+      embeds:
+        - 445fa41b-2f16-450c-bce4-c3f2fbc9cb49
+      isassociatedwith:
+        - 5c492de4-e8ec-47ea-863c-36b16b2526f1
+        - 52689ccf-1876-43f5-95c3-dce9d994a263
+        - 77568823-83cc-49c8-8b96-50877dbd88b0
+    445fa41b-2f16-450c-bce4-c3f2fbc9cb49:
+      size:
+        width: 270
+        height: 210
+      position:
+        x: 0
+        y: 180
+      z: 2
+      parent: afb94d31-0dbb-4fea-ac2c-6fc7f5c98613
+      embeds:
+        - 1dbe4724-2d12-46e5-936e-cbbd4cb3cee1
+    1dbe4724-2d12-46e5-936e-cbbd4cb3cee1:
+      size:
+        width: 210
+        height: 150
+      position:
+        x: 30
+        y: 210
+      z: 3
+      parent: 445fa41b-2f16-450c-bce4-c3f2fbc9cb49
+      embeds:
+        - 415b824d-26f8-4957-a409-46e94def95ef
+        - ebe08745-d992-45cd-a7c0-53d39cb8b148
+    ebe08745-d992-45cd-a7c0-53d39cb8b148:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 150
+        y: 260
+      z: 4
+      parent: 1dbe4724-2d12-46e5-936e-cbbd4cb3cee1
+      isassociatedwith:
+        - 745a054e-7bd1-4756-8f15-77be473c0b7d
+        - f07b7998-9099-44fe-a022-11295c0688de
+        - 52689ccf-1876-43f5-95c3-dce9d994a263
+    415b824d-26f8-4957-a409-46e94def95ef:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 60
+        y: 260
+      z: 4
+      parent: 1dbe4724-2d12-46e5-936e-cbbd4cb3cee1
+    77568823-83cc-49c8-8b96-50877dbd88b0:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 110
+        y: 50
+      z: 1
+    22128a4e-8351-42b0-a619-ff5825454a47:
+      source:
+        id: 83b2dfbc-0cb3-4593-8d63-e9d0291b0b7c
+      target:
+        id: 47cbfee1-4c95-42de-94f6-e3765eda0b1a
+      z: 2
+    6cdf6114-e2ab-45fe-9a7a-acc5061f29e2:
+      source:
+        id: 83b2dfbc-0cb3-4593-8d63-e9d0291b0b7c
+      target:
+        id: 1082ee04-1456-405d-9290-d38c89f9f6f6
+      z: 2
+    3a1ff3d4-7e0c-4672-9614-3fa1f641e9a6:
+      source:
+        id: 4d868f20-45fb-4727-878e-de044e2ecf5c
+      target:
+        id: 47cbfee1-4c95-42de-94f6-e3765eda0b1a
+      z: 2
+    1694f3a0-2159-41e6-a1ff-b3c919c8a868:
+      source:
+        id: 4d868f20-45fb-4727-878e-de044e2ecf5c
+      target:
+        id: 1082ee04-1456-405d-9290-d38c89f9f6f6
+      z: 2
+    6eea4910-fbe2-4c70-b698-3f61df92fe6d:
+      source:
+        id: afb94d31-0dbb-4fea-ac2c-6fc7f5c98613
+      target:
+        id: 52689ccf-1876-43f5-95c3-dce9d994a263
+      z: 2
+    6310855c-21fe-43d8-8166-bd8b0b84553f:
+      source:
+        id: afb94d31-0dbb-4fea-ac2c-6fc7f5c98613
+      target:
+        id: 77568823-83cc-49c8-8b96-50877dbd88b0
+      z: 1
+    5f6e5f36-c4ce-4bf6-901f-76bd5569417f:
+      source:
+        id: 745a054e-7bd1-4756-8f15-77be473c0b7d
+      target:
+        id: 96d3e8a5-a149-480a-8143-41a9017c3241
+      z: 2
+    b0f89de9-c581-4545-a388-97c378dcf3be:
+      source:
+        id: 745a054e-7bd1-4756-8f15-77be473c0b7d
+      target:
+        id: 52689ccf-1876-43f5-95c3-dce9d994a263
+      z: 2
+    6ec67d92-de6b-4b84-a514-2bee7a0e8f02:
+      source:
+        id: f07b7998-9099-44fe-a022-11295c0688de
+      target:
+        id: 96d3e8a5-a149-480a-8143-41a9017c3241
+      z: 2
+    6ff6c6cc-8dbf-416b-aeca-948cf6a9ebba:
+      source:
+        id: f07b7998-9099-44fe-a022-11295c0688de
+      target:
+        id: 52689ccf-1876-43f5-95c3-dce9d994a263
+      z: 2
+    02d242b1-afc9-47a7-a4aa-7ff5f410ff21:
+      source:
+        id: ebe08745-d992-45cd-a7c0-53d39cb8b148
+      target:
+        id: 52689ccf-1876-43f5-95c3-dce9d994a263
+      z: 4
+    33234be2-9b5d-419a-bb74-410f57b31daf:
+      source:
+        id: ebe08745-d992-45cd-a7c0-53d39cb8b148
+      target:
+        id: 745a054e-7bd1-4756-8f15-77be473c0b7d
+      z: 4
+    f040f18e-5850-423a-bbdb-f062ccde9ee7:
+      source:
+        id: ebe08745-d992-45cd-a7c0-53d39cb8b148
+      target:
+        id: f07b7998-9099-44fe-a022-11295c0688de
+      z: 4
+  relationships:
+    52689ccf-1876-43f5-95c3-dce9d994a263:
+      references:
+        vpcId:
+          get_reference: vpc-moodle
+    96d3e8a5-a149-480a-8143-41a9017c3241:
+      references:
+        vpcId:
+          get_reference: vpc-moodle
+    1082ee04-1456-405d-9290-d38c89f9f6f6:
+      references:
+        vpcId:
+          get_reference: vpc-moodle
+    47cbfee1-4c95-42de-94f6-e3765eda0b1a:
+      references:
+        vpcId:
+          get_reference: vpc-moodle
+    f07b7998-9099-44fe-a022-11295c0688de:
+      references:
+        vpcId:
+          get_reference: vpc-moodle
+        securityGroups.id:
+          - get_reference: sg-app
+        nics.subnetId:
+          - get_reference: subnet-app
+    745a054e-7bd1-4756-8f15-77be473c0b7d:
+      references:
+        vpcId:
+          get_reference: vpc-moodle
+        securityGroups.id:
+          - get_reference: sg-app
+        nics.subnetId:
+          - get_reference: subnet-app
+    4d868f20-45fb-4727-878e-de044e2ecf5c:
+      references:
+        vpcId:
+          get_reference: vpc-moodle
+        securityGroupId:
+          get_reference: sg-db
+        subnetId:
+          get_reference: subnet-db
+    83b2dfbc-0cb3-4593-8d63-e9d0291b0b7c:
+      references:
+        vpcId:
+          get_reference: vpc-moodle
+        securityGroupId:
+          get_reference: sg-db
+        subnetId:
+          get_reference: subnet-db
+    9481b981-243c-40de-be45-f12aeefac2ab:
+      references:
+        securityGroupId:
+          get_reference: sg-app
+    c7fca58f-15a2-44b9-a7db-225b27ea288f:
+      references:
+        securityGroupId:
+          get_reference: sg-app
+    254b0218-cd60-4695-a6eb-c1d5ca1153c0:
+      references:
+        securityGroupId:
+          get_reference: sg-db
+    9f8af9dc-9591-441a-9cf4-0f651644f160:
+      references:
+        securityGroupId:
+          get_reference: sg-db
+    445fa41b-2f16-450c-bce4-c3f2fbc9cb49:
+      references:
+        loadBalancerId:
+          get_reference: elb-moodle
+    1dbe4724-2d12-46e5-936e-cbbd4cb3cee1:
+      references:
+        listenerId:
+          get_reference: elb-list-moodle
+    ebe08745-d992-45cd-a7c0-53d39cb8b148:
+      references:
+        poolId:
+          get_reference: svr-pool-moodle
+        privateIps:
+          - get_reference: ecs-app02
+          - get_reference: ecs-app01
+        subnetId:
+          get_reference: subnet-app
+    415b824d-26f8-4957-a409-46e94def95ef:
+      references:
+        poolId:
+          get_reference: svr-pool-moodle
+    afb94d31-0dbb-4fea-ac2c-6fc7f5c98613:
+      references:
+        publicIpId:
+          get_reference: eip-elb-moodle
+        neutronSubnet:
+          get_reference: subnet-app
+node_templates:
+  vpc-moodle:
+    type: HuaweiCloud.VPC.VPC
+    properties:
+      cidr:
+        get_input: vpc-moodle_cidr
+      name:
+        get_input: vpc-moodle_name
+    metadata:
+      Designer:
+        id: 41d23a04-2c27-4285-9f85-66bc77bc7d62
+  subnet-app:
+    type: HuaweiCloud.VPC.Subnet
+    properties:
+      name:
+        get_input: subnet-app_name
+        # default: vpc-moodle
+      cidr:
+        get_input: subnet-app_cidr
+        # default:
+        #   get_input: subnet-app_cidr_default
+      gateway:
+        get_input: subnet-app_gateway
+        # default:
+        #   get_input: subnet-app_gateway_default
+      dhcpEnable: true
+      vpcId:
+        get_reference: vpc-moodle
+    metadata:
+      Designer:
+        id: 52689ccf-1876-43f5-95c3-dce9d994a263
+    requirements:
+      - vpcId:
+          node: vpc-moodle
+  subnet-db:
+    type: HuaweiCloud.VPC.Subnet
+    properties:
+      name:
+        get_input: subnet-db_name
+      cidr:
+        get_input: subnet-db_cidr
+      gateway:
+        get_input: subnet-db_gateway
+      dhcpEnable: true
+      vpcId:
+        get_reference: vpc-moodle
+    metadata:
+      Designer:
+        id: 47cbfee1-4c95-42de-94f6-e3765eda0b1a
+    requirements:
+      - vpcId:
+          node: vpc-moodle
+  sg-db:
+    type: HuaweiCloud.VPC.SecurityGroup
+    properties:
+      name:
+        get_input: sg-db_name
+    metadata:
+      Designer:
+        id: 1082ee04-1456-405d-9290-d38c89f9f6f6
+    requirements:
+      - vpcId:
+          node: vpc-moodle
+  sg-app:
+    type: HuaweiCloud.VPC.SecurityGroup
+    properties:
+      name:
+        get_input: sg-app_name
+    metadata:
+      Designer:
+        id: 96d3e8a5-a149-480a-8143-41a9017c3241
+    requirements:
+      - vpcId:
+          node: vpc-moodle
+  ecs-app01:
+    type: HuaweiCloud.ECS.CloudServer
+    properties:
+      imageId:
+        get_input: ecs-app01_imageId
+      instances: 1
+      flavor:
+        get_input: ecs-app01_flavor
+      nics:
+        - subnetId:
+            get_reference: subnet-app
+      rootVolume:
+        volumeType: SAS
+        size: 60
+      availabilityZone: af-south-1a
+      name:
+        get_input: ecs-app01_name
+      vpcId:
+        get_reference: vpc-moodle
+      securityGroups:
+        - id:
+            get_reference: sg-app
+      sshKeyName:
+        get_input: sshKeyName
+    metadata:
+      Designer:
+        id: f07b7998-9099-44fe-a022-11295c0688de
+    requirements:
+      - vpcId:
+          node: vpc-moodle
+      - securityGroups.id:
+          node: sg-app
+      - nics.subnetId:
+          node: subnet-app
+  ecs-app02:
+    type: HuaweiCloud.ECS.CloudServer
+    properties:
+      imageId:
+        get_input: ecs-app02_imageId
+      instances: 1
+      flavor:
+        get_input: ecs-app02_flavor
+      nics:
+        - subnetId:
+            get_reference: subnet-app
+      rootVolume:
+        volumeType: SAS
+        size: 60
+      availabilityZone: af-south-1b
+      name:
+        get_input: ecs-app02_name
+      vpcId:
+        get_reference: vpc-moodle
+      securityGroups:
+        - id:
+            get_reference: sg-app
+      sshKeyName:
+        get_input: sshKeyName
+    metadata:
+      Designer:
+        id: 745a054e-7bd1-4756-8f15-77be473c0b7d
+    requirements:
+      - vpcId:
+          node: vpc-moodle
+      - securityGroups.id:
+          node: sg-app
+      - nics.subnetId:
+          node: subnet-app
+  moodle-mysql:
+    type: HuaweiCloud.RDS.MySQL
+    properties:
+      dataStore:
+        dbtype: MySQL
+        version: '5.7'
+      dbPort:
+        get_input: moodle-mysql_dbPort
+      securityGroupId:
+        get_reference: sg-db
+      availabilityZone: af-south-1a
+      slaveAvailabilityZone: af-south-1b
+      dbRootPassword:
+        get_input: moodle-mysql_dbRootPassword
+      volume:
+        volumetype: ULTRAHIGH
+        size: 100
+      backupStrategy:
+        keepDays: 0
+        endTime: '02:00'
+        startTime: '01:00'
+      subnetId:
+        get_reference: subnet-db
+      flavor:
+        get_input: moodle-mysql_flavor
+      HA:
+        replicationMode: semisync
+        enable:
+          get_input: moodle-mysql_HA_enable
+      vpcId:
+        get_reference: vpc-moodle
+    metadata:
+      Designer:
+        id: 4d868f20-45fb-4727-878e-de044e2ecf5c
+    requirements:
+      - subnetId:
+          node: subnet-db
+      - securityGroupId:
+          node: sg-db
+      - vpcId:
+          node: vpc-moodle
+  moodle-redis:
+    type: HuaweiCloud.DCS.Redis
+    properties:
+      password:
+        get_input: moodle-redis_password
+      capacity: 2
+      securityGroupId:
+        get_reference: sg-db
+      instanceMode:
+        get_input: moodle-redis_instanceMode
+      subnetId:
+        get_reference: subnet-db
+      vpcId:
+        get_reference: vpc-moodle
+      name:
+        get_input: moodle-redis_name
+      availablityZone1: af-south-1a
+      availablityZone2: af-south-1a
+    metadata:
+      Designer:
+        id: 83b2dfbc-0cb3-4593-8d63-e9d0291b0b7c
+    requirements:
+      - subnetId:
+          node: subnet-db
+      - securityGroupId:
+          node: sg-db
+      - vpcId:
+          node: vpc-moodle
+  sg-rule-http:
+    type: HuaweiCloud.VPC.SecurityGroupRule
+    properties:
+      direction: ingress
+      securityGroupId:
+        get_reference: sg-app
+      maxPort:
+        get_input: sg-rule-http_maxPort
+      minPort:
+        get_input: sg-rule-http_minPort
+      protocol: TCP
+      ethertype: IPv4
+    metadata:
+      Designer:
+        id: c7fca58f-15a2-44b9-a7db-225b27ea288f
+    requirements:
+      - securityGroupId:
+          node: sg-app
+  sg-rule-ssh:
+    type: HuaweiCloud.VPC.SecurityGroupRule
+    properties:
+      direction: ingress
+      securityGroupId:
+        get_reference: sg-app
+      maxPort:
+        get_input: sg-rule-ssh_maxPort
+      minPort:
+        get_input: sg-rule-ssh_minPort
+      protocol: TCP
+      ethertype: IPv4
+    metadata:
+      Designer:
+        id: 9481b981-243c-40de-be45-f12aeefac2ab
+    requirements:
+      - securityGroupId:
+          node: sg-app
+  sg-rule-mysql:
+    type: HuaweiCloud.VPC.SecurityGroupRule
+    properties:
+      direction: ingress
+      securityGroupId:
+        get_reference: sg-db
+      maxPort:
+        get_input: sg-rule-mysql_maxPort
+      minPort:
+        get_input: sg-rule-mysql_minPort
+      protocol: TCP
+      ethertype: IPv4
+      # remoteSecurityGroupId:
+      #   get_input: sg-rule-mysql_remoteSecurityGroupId
+    metadata:
+      Designer:
+        id: 9f8af9dc-9591-441a-9cf4-0f651644f160
+    requirements:
+      - securityGroupId:
+          node: sg-db
+  sg-rule-redis:
+    type: HuaweiCloud.VPC.SecurityGroupRule
+    properties:
+      direction: ingress
+      securityGroupId:
+        get_reference: sg-db
+      maxPort:
+        get_input: sg-rule-redis_maxPort
+      minPort:
+        get_input: sg-rule-redis_minPort
+      ethertype: IPv4
+      protocol: TCP
+      # remoteSecurityGroupId:
+      #   get_input: sg-rule-redis_remoteSecurityGroupId
+    metadata:
+      Designer:
+        id: 254b0218-cd60-4695-a6eb-c1d5ca1153c0
+    requirements:
+      - securityGroupId:
+          node: sg-db
+  elb-moodle:
+    type: HuaweiCloud.ULB.LoadBalancer
+    properties:
+      subnetId:
+        get_attribute:
+          - subnet-app
+          - neutron_subnet_id
+      publicIpId:
+        get_reference: eip-elb-moodle
+    metadata:
+      Designer:
+        id: afb94d31-0dbb-4fea-ac2c-6fc7f5c98613
+    requirements:
+      - neutronSubnet:
+          node: subnet-app
+      - publicIpId:
+          node: eip-elb-moodle
+  elb-list-moodle:
+    type: HuaweiCloud.ULB.Listener
+    properties:
+      protocol: TCP
+      port:
+        get_input: elb-list-moodle_port
+      loadBalancerId:
+        get_reference: elb-moodle
+    metadata:
+      Designer:
+        id: 445fa41b-2f16-450c-bce4-c3f2fbc9cb49
+    requirements:
+      - loadBalancerId:
+          node: elb-moodle
+  svr-pool-moodle:
+    type: HuaweiCloud.ULB.Pool
+    properties:
+      protocol: TCP
+      lbAlgorithm: ROUND_ROBIN
+      listenerId:
+        get_reference: elb-list-moodle
+    metadata:
+      Designer:
+        id: 1dbe4724-2d12-46e5-936e-cbbd4cb3cee1
+    requirements:
+      - listenerId:
+          node: elb-list-moodle
+  svr-mem-moodle:
+    type: HuaweiCloud.ULB.Member
+    properties:
+      subnetId:
+        get_reference: subnet-app
+      port:
+        get_input: svr-mem-moodle_port
+      poolId:
+        get_reference: svr-pool-moodle
+      serverId:
+        - get_attribute: 
+          - ecs-app01
+          - refID
+        - get_attribute: 
+          - ecs-app02
+          - refID      
+    metadata:
+      Designer:
+        id: ebe08745-d992-45cd-a7c0-53d39cb8b148
+    requirements:
+      - subnetId:
+          node: subnet-app
+      - privateIps:
+          node: ecs-app02
+      - privateIps:
+          node: ecs-app01
+      - poolId:
+          node: svr-pool-moodle
+  elb-hltchk-moodle:
+    type: HuaweiCloud.ULB.Healthmonitor
+    properties:
+      delay: 5
+      timeout: 10
+      maxRetries: 3
+      type: TCP
+      poolId:
+        get_reference: svr-pool-moodle
+    metadata:
+      Designer:
+        id: 415b824d-26f8-4957-a409-46e94def95ef
+    requirements:
+      - poolId:
+          node: svr-pool-moodle
+  eip-elb-moodle:
+    type: HuaweiCloud.VPC.EIP
+    properties:
+      publicIP:
+        type: 5_bgp
+      bandwidth:
+        shareType: PER
+        size: 1
+        chargeMode: traffic
+        name: bandwidth-moodle-elb
+    metadata:
+      Designer:
+        id: 77568823-83cc-49c8-8b96-50877dbd88b0
+inputs:
+  vpc-moodle_cidr:
+    description: 虚拟私有云下可用子网范围
+    label: vpc
+    default: '172.16.0.0/16'
+  vpc-moodle_name:
+    description: 虚拟私有云名称
+    default: vpc-moodle
+    label: vpc
+  subnet-app_name:
+    description: 子网名称
+    default: subnet-moodle-app
+    label: vpc
+  subnet-app_cidr:
+    description: 子网内可使用的地址范围
+    label: vpc
+    default: '172.16.0.0/24'
+  subnet-app_gateway:
+    description: 子网的网关
+    label: vpc
+    default: 172.16.0.1
+  subnet-db_name:
+    description: 子网名称
+    default: subnet-moodle-db
+    label: vpc
+  subnet-db_cidr:
+    description: 子网内可使用的地址范围
+    label: vpc
+    default: '172.16.1.0/24'
+  subnet-db_gateway:
+    description: 子网的网关
+    label: vpc
+    default: 172.16.1.1
+  sg-db_name:
+    description: SecurityGroup实例的名称
+    default: sg-moodle-db
+    label: vpc
+  sg-app_name:
+    description: SecurityGroup实例的名称
+    default: sg-moodle-app
+    label: vpc
+  ecs-app01_imageId:
+    description: 云服务器使用的镜像ID
+    label: ecs
+  ecs-app01_flavor:
+    description: 云服务器的规格，请确认该区域支持的规格
+    label: ecs
+  # ecs-app01_rootVolume_volumeType:
+  #   description: 系统盘类型
+  #   label: ecs
+  # ecs-app01_availabilityZone:
+  #   description: 云服务器对应可用区信息，请确认该区域支持的可用区
+  #   label: ecs
+  ecs-app01_name:
+    description: 云服务器名称
+    label: ecs
+  sshKeyName:
+    description: SSH Key Pair Name (Please create ssh key in advance)
+    label: ecs
+  ecs-app02_imageId:
+    description: 云服务器使用的镜像ID
+    label: ecs
+  ecs-app02_flavor:
+    description: 云服务器的规格，请确认该区域支持的规格
+    label: ecs
+  # ecs-app02_rootVolume_volumeType:
+  #   description: 系统盘类型
+  #   label: ecs
+  # ecs-app02_availabilityZone:
+  #   description: 云服务器对应可用区信息，请确认该区域支持的可用区
+  #   label: ecs
+  ecs-app02_name:
+    description: 云服务器名称
+    label: ecs
+  moodle-mysql_dbPort:
+    description: 访问实例的端口
+    label: mysql
+    default: 3306
+  # moodle-mysql_availabilityZone:
+  #   description: 实例所属的可用区
+  #   label: mysql
+  moodle-mysql_dbRootPassword:
+    description: '实例的root用户密码。参数非空，由大小写字母、数字和特殊符号~!@#%^*-_=+?组成，长度8~32位，非弱密码。'
+    label: mysql
+  moodle-mysql_flavor:
+    description: 实例规格
+    label: mysql
+  moodle-mysql_HA_enable:
+    description: 是否高可用
+    label: mysql
+  moodle-redis_password:
+    description: 分布式缓存实例的登录密码
+    label: redis
+  moodle-redis_instanceMode:
+    description: 分布式缓存实例的类型
+    label: redis
+    default: single
+  moodle-redis_name:
+    description: 分布式缓存实例的名称
+    default: moodle-cachestore
+    label: redis
+  # moodle-redis_availablityZone1:
+  #   description: 分布式缓存实例所属的可用区1
+  #   label: redis
+  # moodle-redis_availablityZone2:
+  #   description: 分布式缓存实例所属的可用区2，创建主备类型的分布式缓存实例需要输入此分区
+  #   label: redis
+  sg-rule-http_maxPort:
+    description: 指定结束端口号
+    default: 80
+    label: vpc
+  sg-rule-http_minPort:
+    description: 指定起始端口号
+    default: 80
+    label: vpc
+  sg-rule-ssh_maxPort:
+    description: 指定结束端口号
+    default: 22
+    label: vpc
+  sg-rule-ssh_minPort:
+    description: 指定起始端口号
+    default: 22
+    label: vpc
+  sg-rule-mysql_maxPort:
+    description: 指定结束端口号
+    default: 3306
+    label: vpc
+  sg-rule-mysql_minPort:
+    description: 指定起始端口号
+    default: 3306
+    label: vpc
+  # sg-rule-mysql_remoteSecurityGroupId:
+  #   description: 对端安全组ID
+  #   label: vpc
+  sg-rule-redis_maxPort:
+    description: 指定结束端口号
+    default: 6379
+    label: vpc
+  sg-rule-redis_minPort:
+    description: 指定起始端口号
+    default: 6379
+    label: vpc
+  # sg-rule-redis_remoteSecurityGroupId:
+  #   description: 对端安全组ID
+  #   label: vpc
+  elb-list-moodle_port:
+    description: 监听端口
+    default: 80
+    label: 'vpc'
+  svr-mem-moodle_port:
+    description: 弹性云服务器后端端口
+    default: 80
+    label: vpc
