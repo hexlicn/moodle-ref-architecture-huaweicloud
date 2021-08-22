@@ -1,0 +1,402 @@
+tosca_definitions_version: huaweicloud_tosca_version_1_0
+metadata:
+  Designer:
+    27ed980b-5bdf-41b9-865f-38b7c7df4abf:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 310
+        y: 350
+      z: 1
+    250082fd-b410-42f2-a516-9182132f9ae2:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 310
+        y: 240
+      z: 1
+      dependson:
+        - 27ed980b-5bdf-41b9-865f-38b7c7df4abf
+    31355b3a-af9f-4c99-9150-2f9a8bfcb57a:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 180
+        y: 240
+      z: 1
+      dependson:
+        - befb5c62-3fc1-4346-842f-063808e18db4
+        - 3b7546ab-4193-4250-a6af-003390dd4da7
+    6e3bb253-579f-4be3-81d1-07ab714c3fe3:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 60
+        y: 350
+      z: 1
+    be41f23e-aef2-4c96-9a55-536d18a2007b:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 60
+        y: 240
+      z: 1
+    8d531a72-f08c-4291-984e-9fd39b78cbd8:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 420
+        y: 350
+      z: 1
+    a46a19ae-51f7-4b82-b741-40d192012f25:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 430
+        y: 240
+      z: 1
+      dependson:
+        - 8d531a72-f08c-4291-984e-9fd39b78cbd8
+    3b7546ab-4193-4250-a6af-003390dd4da7:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 180
+        y: 350
+      z: 1
+      embeds: ''
+      dependson:
+        - be41f23e-aef2-4c96-9a55-536d18a2007b
+        - 6e3bb253-579f-4be3-81d1-07ab714c3fe3
+    a23f7483-2d3a-43f5-89da-e87a35447b97:
+      source:
+        id: a46a19ae-51f7-4b82-b741-40d192012f25
+      target:
+        id: 8d531a72-f08c-4291-984e-9fd39b78cbd8
+      z: 1
+    51148238-b912-473d-b8da-3f89b1989604:
+      source:
+        id: 3b7546ab-4193-4250-a6af-003390dd4da7
+      target:
+        id: 6e3bb253-579f-4be3-81d1-07ab714c3fe3
+      z: 1
+    e6c2cea9-f421-41cc-83f1-16baf6cbc44e:
+      source:
+        id: 3b7546ab-4193-4250-a6af-003390dd4da7
+      target:
+        id: be41f23e-aef2-4c96-9a55-536d18a2007b
+      z: 1
+    bf08c01c-233f-45a0-b50a-eb5383d75cb2:
+      source:
+        id: 31355b3a-af9f-4c99-9150-2f9a8bfcb57a
+      target:
+        id: 3b7546ab-4193-4250-a6af-003390dd4da7
+      z: 1
+    4b7590b5-daef-4822-84bf-8f0105f3db02:
+      source:
+        id: 250082fd-b410-42f2-a516-9182132f9ae2
+      target:
+        id: 27ed980b-5bdf-41b9-865f-38b7c7df4abf
+      z: 1
+  relationships:
+    250082fd-b410-42f2-a516-9182132f9ae2:
+      references:
+        dependency:
+          - get_reference: redis-deploy
+    31355b3a-af9f-4c99-9150-2f9a8bfcb57a:
+      references:
+        dependency:
+          - get_reference: mysql-deploy
+    befb5c62-3fc1-4346-842f-063808e18db4:
+      references:
+        dependency:
+          - get_reference: mysql-secret
+          - get_reference: cces4xm4
+          - get_reference: mysql-configmap
+    a46a19ae-51f7-4b82-b741-40d192012f25:
+      references:
+        dependency:
+          - get_reference: moodle-deploy
+    27ed980b-5bdf-41b9-865f-38b7c7df4abf:
+      references: {}
+    8d531a72-f08c-4291-984e-9fd39b78cbd8:
+      references: {}
+    3b7546ab-4193-4250-a6af-003390dd4da7:
+      references:
+        dependency:
+          - get_reference: mysql-secret
+          - get_reference: mysql-configmap
+node_templates:
+  redis-srv:
+    type: HuaweiCloud.CCE.Service
+    properties:
+      k8sManifest:
+        apiVersion: v1
+        kind: Service
+        metadata:
+          labels:
+            app: moodle-redis
+          name: redis-service
+        spec:
+          type: ClusterIP
+          ports:
+            - name: redis-port
+              port: 6379
+              protocol: TCP
+              targetPort: 6379
+          selector:
+            app: moodle-redis
+    metadata:
+      Designer:
+        id: 250082fd-b410-42f2-a516-9182132f9ae2
+    requirements:
+      - dependency:
+          node: redis-deploy
+  redis-deploy:
+    type: HuaweiCloud.CCE.Deployment
+    properties:
+      k8sManifest:
+        apiVersion: 'apps/v1'
+        kind: Deployment
+        metadata:
+          labels:
+            app: moodle-redis
+          name: moodle-redis
+        spec:
+          selector:
+            matchLabels:
+              app: moodle-redis
+          replicas: 1
+          template:
+            spec:
+              volumes:
+                - name: cce-evs-moodle-redis
+                  persistentVolumeClaim:
+                    claimName:
+                      get_input: moodle-redis-pvc_name
+              imagePullSecrets:
+                - name: default-secret
+              containers:
+                - image: 'swr.af-south-1.myhuaweicloud.com/hwc-sa/redis:6.0'
+                  name: redis
+                  imagePullPolicy: Always
+                  volumeMounts:
+                    - name: cce-evs-moodle-redis
+                      mountPath: '/data'
+            metadata:
+              labels:
+                app: moodle-redis
+          strategy:
+            type: RollingUpdate
+    metadata:
+      Designer:
+        id: 27ed980b-5bdf-41b9-865f-38b7c7df4abf
+    requirements: []
+  mysql-srv:
+    type: HuaweiCloud.CCE.Service
+    properties:
+      k8sManifest:
+        apiVersion: v1
+        kind: Service
+        metadata:
+          labels:
+            app: moodle-mysql
+          name: mysql-service
+        spec:
+          type: ClusterIP
+          ports:
+            - name: mysql-port
+              port: 3306
+              protocol: TCP
+              targetPort: 3306
+          selector:
+            app: moodle-mysql
+    metadata:
+      Designer:
+        id: 31355b3a-af9f-4c99-9150-2f9a8bfcb57a
+    requirements:
+      - dependency:
+          node: mysql-deploy
+  mysql-deploy:
+    type: HuaweiCloud.CCE.Deployment
+    properties:
+      k8sManifest:
+        apiVersion: 'apps/v1'
+        kind: Deployment
+        metadata:
+          labels:
+            app: moodle-mysql
+          name: moodle-mysql
+        spec:
+          selector:
+            matchLabels:
+              app: moodle-mysql
+          replicas: 1
+          template:
+            spec:
+              volumes:
+                - name: cce-evs-moodle-mysql
+                  persistentVolumeClaim:
+                    claimName:
+                      get_input: moodle-mysql-pvc_name
+              imagePullSecrets:
+                - name: default-secret
+              containers:
+                - image: 'swr.af-south-1.myhuaweicloud.com/hwc-sa/mysql:8.0'
+                  name: mysql
+                  imagePullPolicy: Always
+                  volumeMounts:
+                    - name: cce-evs-moodle-mysql
+                      mountPath: '/var/lib/mysql'
+                  envFrom:
+                    - configMapRef:
+                        name: env-configmap
+                    - secretRef:
+                        name: env-secrets
+            metadata:
+              labels:
+                app: moodle-mysql
+          strategy:
+            type: RollingUpdate
+    metadata:
+      Designer:
+        id: 3b7546ab-4193-4250-a6af-003390dd4da7
+    requirements:
+      - dependency:
+          node: mysql-secret
+      - dependency:
+          node: mysql-configmap
+  mysql-configmap:
+    type: HuaweiCloud.CCE.ConfigMap
+    properties:
+      name: env-configmap
+      data:
+        MYSQL_DATABASE:
+          get_input: mysql-configmap_data_MYSQLDB
+    metadata:
+      Designer:
+        id: be41f23e-aef2-4c96-9a55-536d18a2007b
+  mysql-secret:
+    type: HuaweiCloud.CCE.Secret
+    properties:
+      name: env-secrets
+      data:
+        MYSQL_ROOT_PASSWORD:
+          get_input: mysql-secret_data_MYSQL_ROOTPWD
+        MYSQL_USER:
+          get_input: mysql-secret_data_MYSQL_USER
+        MYSQL_PASSWORD:
+          get_input: mysql-secret_data_MYSQL_PWD
+    metadata:
+      Designer:
+        id: 6e3bb253-579f-4be3-81d1-07ab714c3fe3
+  moodle-deploy:
+    type: HuaweiCloud.CCE.Deployment
+    properties:
+      k8sManifest:
+        apiVersion: 'apps/v1'
+        kind: Deployment
+        metadata:
+          labels:
+            app: moodle-app
+          name: moodle-app
+        spec:
+          selector:
+            matchLabels:
+              app: moodle-app
+          replicas: 1
+          template:
+            spec:
+              volumes:
+                - name: cce-evs-moodle-app
+                  persistentVolumeClaim:
+                    claimName:
+                      get_input: moodle-app-pvc_name
+              imagePullSecrets:
+                - name: default-secret
+              containers:
+                - image: >-
+                    swr.af-south-1.myhuaweicloud.com/hwc-sa/moodlehq/moodle-php-apache:7.4
+                  name: moodle-php-apache-img
+                  imagePullPolicy: Always
+                  volumeMounts:
+                    - name: cce-evs-moodle-app
+                      mountPath: '/var/www/html'
+            metadata:
+              labels:
+                app: moodle-app
+          strategy:
+            type: RollingUpdate
+    metadata:
+      Designer:
+        id: 8d531a72-f08c-4291-984e-9fd39b78cbd8
+    requirements: []
+  moodle-srv:
+    type: HuaweiCloud.CCE.Service
+    properties:
+      k8sManifest:
+        apiVersion: v1
+        metadata:
+          labels:
+            app: moodle-app
+          name: moodle-service
+        kind: Service
+        spec:
+          type: NodePort
+          ports:
+            - protocol: TCP
+              targetPort: 80
+              port: 80
+              nodePort:
+                get_input: access_port
+              name: moodleapp-port
+          selector:
+            app: moodle-app
+    metadata:
+      Designer:
+        id: a46a19ae-51f7-4b82-b741-40d192012f25
+    requirements:
+      - dependency:
+          node: moodle-deploy
+inputs:
+  moodle-redis-pvc_name:
+    description: please input pvc name for redis
+    label: moodle-redis
+    default: cce-evs-moodle-app-redis
+  moodle-mysql-pvc_name:
+    description: Please input pvc name for mysql
+    label: moodle-mysql
+    default: cce-evs-moodle-mysql
+  mysql-configmap_data_MYSQLDB:
+    description: Please input mysql database name for moodle
+    label: moodle-mysql
+    default: moodledb
+  mysql-secret_data_MYSQL_ROOTPWD:
+    description: please input mysql root's password
+    label: moodle-mysql
+    default: '********'
+  mysql-secret_data_MYSQL_USER:
+    description: please specify mysql username for moodle
+    label: moodle-mysql
+    default: moodleuser
+  mysql-secret_data_MYSQL_PWD:
+    description: please specify mysql password for moodle
+    label: moodle-mysql
+    default: '********'
+  moodle-app-pvc_name:
+    description: Please input pvc name for moodle app
+    label: moodle-app
+    default: cce-evs-moodle-app
+  access_port:
+    default: 32001
+    type: integer
+    description: Please Input NodePort number
+    label: moodle-app
