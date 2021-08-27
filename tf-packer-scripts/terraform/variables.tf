@@ -1,9 +1,9 @@
 variable "access_key" {
-  default = "GKKHIPDLGPY2LGMYWGFD"
+  default = "<your_HuaweiCloud_access_key>"
 }
 
 variable "secret_key" {
-  default = "Gt76XHnBGgdVZHwTOqqaigskGvPqFAViDoP0BiGh"
+  default = "<your_HuaweiCloud_secret_access_key>"
 }
 
 variable "region" {
