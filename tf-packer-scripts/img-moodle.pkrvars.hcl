@@ -1,5 +1,0 @@
-access_key = "<your_HuaweiCloud_access_key>"
-secret_key = "<your_HuaweiCloud_secret_accessKey>" 
-source_image_id = "ce36af6f-f9a7-4e17-b483-b2be51271673"
-vpc_id = "3aed3532-9371-437c-97d3-04617134a3d4"
-subent_id = "72506b9d-a036-406b-a4ea-5492a4408298"
